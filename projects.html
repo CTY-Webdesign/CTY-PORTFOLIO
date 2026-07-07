@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Détail des projets de Thomas Coutaye — infrastructure, réseaux, virtualisation et cybersécurité.">
+<title>Projets — Thomas Coutaye</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="index.html" class="brand">Thomas Coutaye</a>
+    <button class="burger" id="burger" aria-label="Ouvrir le menu">≡</button>
+    <nav class="links" id="nav-links">
+      <a href="index.html#about">À propos</a>
+      <a href="index.html#parcours">Parcours</a>
+      <a href="index.html#skills">Compétences</a>
+      <a href="index.html#documents">Documents</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="projects-detail-header">
+  <div class="wrap">
+    <a href="index.html" class="back-link">← Retour à l'accueil</a>
+    <p class="eyebrow">Réalisations</p>
+    <h1 class="section-title">Tous les <em>projets</em></h1>
+  </div>
+</section>
+
+<div class="wrap">
+
+  <article id="proxmox" class="project-full">
+    <div class="project-full-media">🖥️</div>
+    <div>
+      <span class="cat">Projet personnel</span>
+      <h3>Serveur Proxmox Personnel</h3>
+      <p>J'ai mis en place un laboratoire virtuel complet pour tester et approfondir mes compétences en virtualisation, sécurité et automatisation. Ce projet m'a permis de simuler un environnement réseau professionnel avec plusieurs machines virtuelles interconnectées.</p>
+      <ul>
+        <li>Installation et configuration d'un serveur Proxmox VE</li>
+        <li>Déploiement et administration d'OPNsense (routeur + pare-feu)</li>
+        <li>Configuration d'un VPN pour accès distant sécurisé</li>
+        <li>Automatisation avec Ansible pour le déploiement et la configuration</li>
+        <li>Gestion du DHCP et des réservations IP</li>
+      </ul>
+    </div>
+  </article>
+
+  <article id="labo" class="project-full">
+    <div class="project-full-media">🔬</div>
+    <div>
+      <span class="cat">Académique — 1ère année</span>
+      <h3>Projet Laboratoire</h3>
+      <p>Projet académique inter-promotion, où chaque groupe met en place différentes technologies et infrastructures selon son niveau. En première année, j'ai occupé le rôle de technicien, chargé de tester les procédures et de mettre en place l'infrastructure de base.</p>
+      <ul>
+        <li>Test et validation des procédures écrites par les promotions supérieures</li>
+        <li>Mise en place d'un serveur Proxmox de test</li>
+        <li>Création et configuration de machines virtuelles</li>
+        <li>Tests de virtualisation imbriquée (nested virtualization)</li>
+        <li>Documentation des résultats et problèmes rencontrés</li>
+      </ul>
+    </div>
+  </article>
+
+  <article id="piscine" class="project-full">
+    <div class="project-full-media">🏊</div>
+    <div>
+      <span class="cat">Académique — 1ère année</span>
+      <h3>Projet Piscine</h3>
+      <p>Le but du projet était de mettre en place une infrastructure complète (système, réseau, services) nécessaire au fonctionnement d'une entreprise fictive. La promotion était répartie en plusieurs groupes, chacun étant attribué à un service différent. Notre groupe était chargé du DHCP et du plan d'adressage IP — nous avons poussé le projet plus loin en installant un OPNsense, chargé de gérer le DHCP, les réservations et le pare-feu.</p>
+      <ul>
+        <li>Installation et configuration d'un pare-feu OPNsense</li>
+        <li>Conception du plan d'adressage IP pour toute l'infrastructure</li>
+        <li>Configuration du serveur DHCP avec zones multiples</li>
+        <li>Configuration des règles de pare-feu par sous-réseau</li>
+        <li>Segmentation réseau selon les besoins de l'entreprise</li>
+      </ul>
+    </div>
+  </article>
+
+  <article id="redteam" class="project-full">
+    <div class="project-full-media">🕷️</div>
+    <div>
+      <span class="cat">Académique — Atelier</span>
+      <h3>Atelier Red-Team</h3>
+      <p>TP Attaque par rogue DHCP/DNS et notion de Man-in-the-Middle (MITM) DNS.</p>
+      <ul>
+        <li>Déploiement et configuration d'un routeur Debian (DHCP, DNS, routage)</li>
+        <li>Conception et mise en place des VMnet (VMnet isolée ↔ VMnet8 NAT) sous VMware Workstation</li>
+        <li>Configuration du serveur DHCP et des réservations côté routeur Debian</li>
+        <li>Installation d'un faux routeur DHCP/DNS sur la machine malveillante pour tests d'attaque</li>
+        <li>Création d'un faux site bancaire avec Apache pour exercices d'ingénierie sociale et d'analyse</li>
+        <li>Série de commandes et étapes pédagogiques pour observer la communication, l'attaque et les contre-mesures</li>
+      </ul>
+    </div>
+  </article>
+
+  <article id="ms" class="project-full">
+    <div class="project-full-media">📖</div>
+    <div>
+      <span class="cat">Stage — février à mars 2026</span>
+      <h3>Administrateur Systèmes & Réseaux — Mathésciences</h3>
+      <p>Poste occupé de février à mars 2026 au sein d'une entreprise de tutoring.</p>
+      <ul>
+        <li>Installation et configuration de serveurs Linux (Debian, Ubuntu)</li>
+        <li>Mise en place et maintenance de services réseau (DHCP)</li>
+        <li>Configuration de pare-feu et sécurité réseau</li>
+        <li>Support technique aux utilisateurs finaux</li>
+        <li>Déploiement d'une instance Nextcloud avec sécurisation des accès et gestion des utilisateurs</li>
+        <li>Configuration de l'imprimante réseau</li>
+      </ul>
+    </div>
+  </article>
+
+</div>
+
+<footer>
+  <span class="blob blob-leaf blob-green" aria-hidden="true"></span>
+  <span class="blob blob-leaf blob-brown" aria-hidden="true"></span>
+  <div class="wrap footer-inner">
+    <div>
+      <p class="footer-name">Thomas Coutaye</p>
+      <p class="footer-meta">© 2026 — Toulouse, France</p>
+    </div>
+    <ul class="footer-links">
+      <li><a href="https://www.linkedin.com/in/thomas-coutaye-84a8301b1/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
