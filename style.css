@@ -60,7 +60,31 @@ h1,h2,h3,h4{font-family:var(--font-display); margin:0; line-height:1.05;}
   font-style:normal;
   color:var(--green);
 }
-section{padding:5.5rem 0; position:relative;}
+section{padding:5.5rem 0; position:relative; overflow:hidden;}
+
+/* discrete background details to avoid empty space */
+#about::before{
+  content:''; position:absolute; top:-60px; right:-60px;
+  width:280px; height:280px; border-radius:50%;
+  border:2px solid var(--green); opacity:0.07; pointer-events:none;
+}
+#skills::before{
+  content:''; position:absolute; bottom:-90px; left:-70px;
+  width:260px; height:260px; border-radius:0 100% 0 100%;
+  border:2px solid var(--brown); opacity:0.08;
+  transform:rotate(-15deg); pointer-events:none;
+}
+#documents::before{
+  content:''; position:absolute; top:-40px; left:40%;
+  width:180px; height:180px; border-radius:50%;
+  border:2px solid var(--green); opacity:0.06; pointer-events:none;
+}
+#contact::before{
+  content:''; position:absolute; bottom:-70px; right:-50px;
+  width:220px; height:220px; border-radius:0 100% 0 100%;
+  border:2px solid var(--brown); opacity:0.08;
+  transform:rotate(160deg); pointer-events:none;
+}
 
 /* ===== ORGANIC SHAPES (Huemint motif) ===== */
 .blob{
@@ -155,7 +179,7 @@ nav.links a:hover::after, nav.links a.active::after{width:100%;}
 }
 .btn:hover{background:var(--green); color:#fff;}
 .btn-solid{background:var(--green); color:#fff;}
-.btn-solid:hover{background:var(--green-dark);}
+.btn-solid:hover{background:var(--bg); color:var(--green); border-color:var(--green);}
 
 /* ===== ABOUT ===== */
 .about-inner{
@@ -200,10 +224,13 @@ nav.links a:hover::after, nav.links a.active::after{width:100%;}
 }
 .masonry-card{
   break-inside:avoid; margin-bottom:1.5rem; border-radius:var(--radius);
-  overflow:hidden; border:1px solid var(--border); text-decoration:none; color:var(--ink);
-  display:block; background:#fff; transition:transform .25s, box-shadow .25s;
+  overflow:hidden; border:1.5px solid var(--border); text-decoration:none; color:var(--ink);
+  display:block; background:#fff; transition:transform .25s, box-shadow .25s, border-color .35s ease;
 }
-.masonry-card:hover{transform:translateY(-4px); box-shadow:0 14px 28px rgba(20,32,26,0.08);}
+.masonry-card:hover, .masonry-card:focus-visible{
+  transform:translateY(-4px); box-shadow:0 14px 28px rgba(20,32,26,0.08);
+  border-color:var(--green);
+}
 .masonry-media{
   background:var(--green-tint); display:flex; align-items:center; justify-content:center;
   font-size:2.4rem;
