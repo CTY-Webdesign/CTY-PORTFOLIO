@@ -53,6 +53,35 @@ if (pdfModal) {
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closePdf(); });
 }
 
+// ---------- Project detail modals ----------
+const projectModalOverlay = document.getElementById('project-modal-overlay');
+if (projectModalOverlay) {
+  const projectModalBody = document.getElementById('project-modal-body');
+  const projectModalClose = document.getElementById('project-modal-close');
+
+  function openProjectModal(targetId) {
+    const template = document.getElementById(targetId);
+    if (!template) return;
+    projectModalBody.innerHTML = '';
+    projectModalBody.appendChild(template.content.cloneNode(true));
+    projectModalOverlay.classList.add('show');
+  }
+  function closeProjectModal() {
+    projectModalOverlay.classList.remove('show');
+  }
+
+  document.querySelectorAll('.modal-card').forEach(card => {
+    card.addEventListener('click', () => openProjectModal(card.getAttribute('data-target')));
+  });
+  projectModalClose.addEventListener('click', closeProjectModal);
+  projectModalOverlay.addEventListener('click', (e) => {
+    if (e.target === projectModalOverlay) closeProjectModal();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeProjectModal();
+  });
+}
+
 // ---------- EmailJS ----------
 // ⚠️ Vérifie que ces IDs et les noms de champs (user_name / user_email / message)
 // correspondent à ton service et à ton template EmailJS.

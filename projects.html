@@ -33,88 +33,340 @@
 
 <div class="wrap">
 
-  <article id="proxmox" class="project-full">
-    <div class="project-full-media">🖥️</div>
-    <div>
-      <span class="cat">Projet personnel</span>
-      <h3>Serveur Proxmox Personnel</h3>
-      <p>J'ai mis en place un laboratoire virtuel complet pour tester et approfondir mes compétences en virtualisation, sécurité et automatisation. Ce projet m'a permis de simuler un environnement réseau professionnel avec plusieurs machines virtuelles interconnectées.</p>
+  <!-- ============================================
+       PROJET 1 — Serveur Proxmox Personnel
+       ============================================ -->
+  <article id="proxmox" class="project-block">
+    <div class="project-block-grid">
+      <div class="project-block-info">
+        <span class="cat">Projet personnel</span>
+        <h3>Serveur Proxmox Personnel</h3>
+        <p>Laboratoire virtuel complet pour tester et approfondir mes compétences en virtualisation, sécurité et automatisation, en simulant un environnement réseau professionnel avec plusieurs VM interconnectées.</p>
+        <ul>
+          <li>Serveur Proxmox VE + OPNsense</li>
+          <li>VPN et automatisation Ansible</li>
+        </ul>
+      </div>
+      <div class="project-modals">
+        <button class="modal-card" data-target="proxmox-contexte">
+          <span class="modal-icon">🎯</span><span class="modal-label">Contexte</span>
+        </button>
+        <button class="modal-card" data-target="proxmox-stack">
+          <span class="modal-icon">🛠️</span><span class="modal-label">Stack technique</span>
+        </button>
+        <button class="modal-card" data-target="proxmox-etapes">
+          <span class="modal-icon">✅</span><span class="modal-label">Étapes clés</span>
+        </button>
+        <button class="modal-card" data-target="proxmox-resultats">
+          <span class="modal-icon">🏆</span><span class="modal-label">Résultats</span>
+        </button>
+      </div>
+    </div>
+
+    <template id="proxmox-contexte">
+      <span class="project-modal-cat">Contexte</span>
+      <h4>Pourquoi ce projet</h4>
+      <p>Envie de disposer d'un environnement à moi pour expérimenter librement, sans dépendre d'une infrastructure académique. L'objectif était de reproduire les conditions d'un vrai réseau d'entreprise à petite échelle : routage, pare-feu, VPN et automatisation.</p>
+    </template>
+    <template id="proxmox-stack">
+      <span class="project-modal-cat">Stack technique</span>
+      <h4>Outils utilisés</h4>
       <ul>
-        <li>Installation et configuration d'un serveur Proxmox VE</li>
-        <li>Déploiement et administration d'OPNsense (routeur + pare-feu)</li>
-        <li>Configuration d'un VPN pour accès distant sécurisé</li>
-        <li>Automatisation avec Ansible pour le déploiement et la configuration</li>
+        <li>Proxmox VE (hyperviseur)</li>
+        <li>OPNsense (routeur / pare-feu)</li>
+        <li>VPN pour accès distant sécurisé</li>
+        <li>Ansible (automatisation)</li>
+      </ul>
+    </template>
+    <template id="proxmox-etapes">
+      <span class="project-modal-cat">Étapes clés</span>
+      <h4>Déroulé du projet</h4>
+      <ul>
+        <li>Installation et configuration du serveur Proxmox VE</li>
+        <li>Déploiement et administration d'OPNsense</li>
+        <li>Mise en place du VPN pour l'accès distant</li>
+        <li>Écriture de playbooks Ansible pour automatiser le déploiement</li>
         <li>Gestion du DHCP et des réservations IP</li>
       </ul>
-    </div>
+    </template>
+    <template id="proxmox-resultats">
+      <span class="project-modal-cat">Résultats</span>
+      <h4>Compétences acquises</h4>
+      <p>Autonomie complète sur l'administration d'un hyperviseur, la configuration d'un pare-feu et l'automatisation de tâches réseau récurrentes.</p>
+    </template>
   </article>
 
-  <article id="labo" class="project-full">
-    <div class="project-full-media">🔬</div>
-    <div>
-      <span class="cat">Académique — 1ère année</span>
-      <h3>Projet Laboratoire</h3>
-      <p>Projet académique inter-promotion, où chaque groupe met en place différentes technologies et infrastructures selon son niveau. En première année, j'ai occupé le rôle de technicien, chargé de tester les procédures et de mettre en place l'infrastructure de base.</p>
+  <!-- ============================================
+       PROJET 2 — Projet Laboratoire
+       ============================================ -->
+  <article id="labo" class="project-block">
+    <div class="project-block-grid">
+      <div class="project-block-info">
+        <span class="cat">Académique — 1ère année</span>
+        <h3>Projet Laboratoire</h3>
+        <p>Projet académique inter-promotion, où chaque groupe met en place différentes technologies et infrastructures selon son niveau. En 1ère année, j'ai occupé le rôle de technicien.</p>
+        <ul>
+          <li>Test des procédures écrites par les promotions supérieures</li>
+          <li>Serveur Proxmox de test</li>
+        </ul>
+      </div>
+      <div class="project-modals">
+        <button class="modal-card" data-target="labo-contexte">
+          <span class="modal-icon">🎯</span><span class="modal-label">Contexte</span>
+        </button>
+        <button class="modal-card" data-target="labo-stack">
+          <span class="modal-icon">🛠️</span><span class="modal-label">Stack technique</span>
+        </button>
+        <button class="modal-card" data-target="labo-etapes">
+          <span class="modal-icon">✅</span><span class="modal-label">Étapes clés</span>
+        </button>
+        <button class="modal-card" data-target="labo-resultats">
+          <span class="modal-icon">🏆</span><span class="modal-label">Résultats</span>
+        </button>
+      </div>
+    </div>
+
+    <template id="labo-contexte">
+      <span class="project-modal-cat">Contexte</span>
+      <h4>Un projet à plusieurs niveaux</h4>
+      <p>Ce projet inter-promotion répartit les rôles selon l'année d'étude : les promotions supérieures rédigent les procédures, les premières années les testent et posent les fondations techniques.</p>
+    </template>
+    <template id="labo-stack">
+      <span class="project-modal-cat">Stack technique</span>
+      <h4>Outils utilisés</h4>
+      <ul>
+        <li>Proxmox VE</li>
+        <li>Virtualisation imbriquée (nested virtualization)</li>
+      </ul>
+    </template>
+    <template id="labo-etapes">
+      <span class="project-modal-cat">Étapes clés</span>
+      <h4>Déroulé du projet</h4>
       <ul>
         <li>Test et validation des procédures écrites par les promotions supérieures</li>
         <li>Mise en place d'un serveur Proxmox de test</li>
         <li>Création et configuration de machines virtuelles</li>
-        <li>Tests de virtualisation imbriquée (nested virtualization)</li>
+        <li>Tests de virtualisation imbriquée</li>
         <li>Documentation des résultats et problèmes rencontrés</li>
       </ul>
-    </div>
+    </template>
+    <template id="labo-resultats">
+      <span class="project-modal-cat">Résultats</span>
+      <h4>Compétences acquises</h4>
+      <p>Rigueur dans le test et la validation de procédures techniques, premiers pas dans l'administration d'un hyperviseur, et sens de la documentation.</p>
+    </template>
   </article>
 
-  <article id="piscine" class="project-full">
-    <div class="project-full-media">🏊</div>
-    <div>
-      <span class="cat">Académique — 1ère année</span>
-      <h3>Projet Piscine</h3>
-      <p>Le but du projet était de mettre en place une infrastructure complète (système, réseau, services) nécessaire au fonctionnement d'une entreprise fictive. La promotion était répartie en plusieurs groupes, chacun étant attribué à un service différent. Notre groupe était chargé du DHCP et du plan d'adressage IP — nous avons poussé le projet plus loin en installant un OPNsense, chargé de gérer le DHCP, les réservations et le pare-feu.</p>
+  <!-- ============================================
+       PROJET 3 — Projet Piscine
+       ============================================ -->
+  <article id="piscine" class="project-block">
+    <div class="project-block-grid">
+      <div class="project-block-info">
+        <span class="cat">Académique — 1ère année</span>
+        <h3>Projet Piscine</h3>
+        <p>Mise en place d'une infrastructure complète pour une entreprise fictive, répartie en plusieurs groupes/services. Notre groupe était chargé du DHCP et du plan d'adressage IP.</p>
+        <ul>
+          <li>Pare-feu OPNsense</li>
+          <li>Plan d'adressage IP complet</li>
+        </ul>
+      </div>
+      <div class="project-modals">
+        <button class="modal-card" data-target="piscine-contexte">
+          <span class="modal-icon">🎯</span><span class="modal-label">Contexte</span>
+        </button>
+        <button class="modal-card" data-target="piscine-stack">
+          <span class="modal-icon">🛠️</span><span class="modal-label">Stack technique</span>
+        </button>
+        <button class="modal-card" data-target="piscine-architecture">
+          <span class="modal-icon">🗺️</span><span class="modal-label">Architecture</span>
+        </button>
+        <button class="modal-card" data-target="piscine-etapes">
+          <span class="modal-icon">✅</span><span class="modal-label">Étapes clés</span>
+        </button>
+        <button class="modal-card" data-target="piscine-resultats">
+          <span class="modal-icon">🏆</span><span class="modal-label">Résultats</span>
+        </button>
+      </div>
+    </div>
+
+    <template id="piscine-contexte">
+      <span class="project-modal-cat">Contexte</span>
+      <h4>Une entreprise fictive à monter de A à Z</h4>
+      <p>La promotion était répartie en plusieurs groupes, chacun attribué à un service différent (DHCP, DNS, sécurité...). Notre groupe a poussé le projet plus loin en installant un OPNsense complet pour gérer DHCP, réservations et pare-feu.</p>
+    </template>
+    <template id="piscine-stack">
+      <span class="project-modal-cat">Stack technique</span>
+      <h4>Outils utilisés</h4>
       <ul>
-        <li>Installation et configuration d'un pare-feu OPNsense</li>
-        <li>Conception du plan d'adressage IP pour toute l'infrastructure</li>
+        <li>OPNsense (pare-feu)</li>
+        <li>Serveur DHCP multi-zones</li>
+      </ul>
+    </template>
+    <template id="piscine-architecture">
+      <span class="project-modal-cat">Architecture</span>
+      <h4>Plan d'adressage IP</h4>
+      <p>Conception d'un plan d'adressage pour l'ensemble de l'infrastructure, avec segmentation réseau par service et règles de pare-feu dédiées à chaque sous-réseau.</p>
+    </template>
+    <template id="piscine-etapes">
+      <span class="project-modal-cat">Étapes clés</span>
+      <h4>Déroulé du projet</h4>
+      <ul>
+        <li>Installation et configuration du pare-feu OPNsense</li>
+        <li>Conception du plan d'adressage IP</li>
         <li>Configuration du serveur DHCP avec zones multiples</li>
         <li>Configuration des règles de pare-feu par sous-réseau</li>
         <li>Segmentation réseau selon les besoins de l'entreprise</li>
       </ul>
-    </div>
+    </template>
+    <template id="piscine-resultats">
+      <span class="project-modal-cat">Résultats</span>
+      <h4>Compétences acquises</h4>
+      <p>Conception d'un plan d'adressage cohérent à l'échelle d'une infrastructure, et administration d'un pare-feu en environnement multi-services.</p>
+    </template>
   </article>
 
-  <article id="redteam" class="project-full">
-    <div class="project-full-media">🕷️</div>
-    <div>
-      <span class="cat">Académique — Atelier</span>
-      <h3>Atelier Red-Team</h3>
-      <p>TP Attaque par rogue DHCP/DNS et notion de Man-in-the-Middle (MITM) DNS.</p>
+  <!-- ============================================
+       PROJET 4 — Atelier Red-Team
+       ============================================ -->
+  <article id="redteam" class="project-block">
+    <div class="project-block-grid">
+      <div class="project-block-info">
+        <span class="cat">Académique — Atelier</span>
+        <h3>Atelier Red-Team</h3>
+        <p>TP attaque par rogue DHCP/DNS et notion de Man-in-the-Middle (MITM) DNS, avec mise en place d'un faux site bancaire pour illustrer les risques d'ingénierie sociale.</p>
+        <ul>
+          <li>Routeur Debian (DHCP, DNS, routage)</li>
+          <li>Rogue DHCP/DNS et MITM</li>
+        </ul>
+      </div>
+      <div class="project-modals">
+        <button class="modal-card" data-target="redteam-contexte">
+          <span class="modal-icon">🎯</span><span class="modal-label">Contexte</span>
+        </button>
+        <button class="modal-card" data-target="redteam-stack">
+          <span class="modal-icon">🛠️</span><span class="modal-label">Stack technique</span>
+        </button>
+        <button class="modal-card" data-target="redteam-architecture">
+          <span class="modal-icon">🗺️</span><span class="modal-label">Architecture</span>
+        </button>
+        <button class="modal-card" data-target="redteam-etapes">
+          <span class="modal-icon">✅</span><span class="modal-label">Étapes clés</span>
+        </button>
+        <button class="modal-card" data-target="redteam-resultats">
+          <span class="modal-icon">🏆</span><span class="modal-label">Résultats</span>
+        </button>
+      </div>
+    </div>
+
+    <template id="redteam-contexte">
+      <span class="project-modal-cat">Contexte</span>
+      <h4>Comprendre l'attaque pour mieux s'en défendre</h4>
+      <p>Atelier pédagogique visant à observer concrètement une attaque par rogue DHCP/DNS et un Man-in-the-Middle DNS, pour comprendre les mécanismes d'attaque et les contre-mesures associées.</p>
+    </template>
+    <template id="redteam-stack">
+      <span class="project-modal-cat">Stack technique</span>
+      <h4>Outils utilisés</h4>
       <ul>
-        <li>Déploiement et configuration d'un routeur Debian (DHCP, DNS, routage)</li>
-        <li>Conception et mise en place des VMnet (VMnet isolée ↔ VMnet8 NAT) sous VMware Workstation</li>
-        <li>Configuration du serveur DHCP et des réservations côté routeur Debian</li>
-        <li>Installation d'un faux routeur DHCP/DNS sur la machine malveillante pour tests d'attaque</li>
-        <li>Création d'un faux site bancaire avec Apache pour exercices d'ingénierie sociale et d'analyse</li>
-        <li>Série de commandes et étapes pédagogiques pour observer la communication, l'attaque et les contre-mesures</li>
+        <li>Routeur Debian (DHCP, DNS, routage)</li>
+        <li>VMware Workstation</li>
+        <li>Apache (faux site bancaire)</li>
       </ul>
-    </div>
+    </template>
+    <template id="redteam-architecture">
+      <span class="project-modal-cat">Architecture</span>
+      <h4>Topologie réseau</h4>
+      <p>Deux VMnet distinctes sous VMware Workstation : une VMnet isolée pour la machine malveillante, et une VMnet8 en NAT pour observer les échanges avec la machine cible.</p>
+    </template>
+    <template id="redteam-etapes">
+      <span class="project-modal-cat">Étapes clés</span>
+      <h4>Déroulé de l'atelier</h4>
+      <ul>
+        <li>Déploiement et configuration du routeur Debian légitime</li>
+        <li>Conception des VMnet (isolée ↔ VMnet8 NAT)</li>
+        <li>Installation d'un faux routeur DHCP/DNS sur la machine malveillante</li>
+        <li>Création d'un faux site bancaire avec Apache</li>
+        <li>Observation de la communication, de l'attaque et des contre-mesures</li>
+      </ul>
+    </template>
+    <template id="redteam-resultats">
+      <span class="project-modal-cat">Résultats</span>
+      <h4>Compétences acquises</h4>
+      <p>Compréhension concrète des attaques MITM et rogue DHCP/DNS, et sensibilisation aux risques d'ingénierie sociale côté utilisateur final.</p>
+    </template>
   </article>
 
-  <article id="ms" class="project-full">
-    <div class="project-full-media">📖</div>
-    <div>
-      <span class="cat">Stage — février à mars 2026</span>
-      <h3>Administrateur Systèmes & Réseaux — Mathésciences</h3>
-      <p>Poste occupé de février à mars 2026 au sein d'une entreprise de tutoring.</p>
+  <!-- ============================================
+       PROJET 5 — Stage Mathésciences
+       ============================================ -->
+  <article id="ms" class="project-block">
+    <div class="project-block-grid">
+      <div class="project-block-info">
+        <span class="cat">Stage — février à mars 2026</span>
+        <h3>Administrateur Systèmes & Réseaux — Mathésciences</h3>
+        <p>Poste occupé de février à mars 2026 au sein d'une entreprise de tutoring, avec un périmètre allant de l'administration serveur au support utilisateur.</p>
+        <ul>
+          <li>Serveurs Linux (Debian, Ubuntu)</li>
+          <li>Déploiement Nextcloud sécurisé</li>
+        </ul>
+      </div>
+      <div class="project-modals">
+        <button class="modal-card" data-target="ms-contexte">
+          <span class="modal-icon">🎯</span><span class="modal-label">Contexte</span>
+        </button>
+        <button class="modal-card" data-target="ms-stack">
+          <span class="modal-icon">🛠️</span><span class="modal-label">Stack technique</span>
+        </button>
+        <button class="modal-card" data-target="ms-etapes">
+          <span class="modal-icon">✅</span><span class="modal-label">Missions</span>
+        </button>
+        <button class="modal-card" data-target="ms-resultats">
+          <span class="modal-icon">🏆</span><span class="modal-label">Résultats</span>
+        </button>
+      </div>
+    </div>
+
+    <template id="ms-contexte">
+      <span class="project-modal-cat">Contexte</span>
+      <h4>Un stage généraliste système & réseau</h4>
+      <p>Stage de deux mois au sein d'une entreprise de tutoring, avec pour mission de maintenir et sécuriser l'infrastructure existante tout en assurant le support des utilisateurs.</p>
+    </template>
+    <template id="ms-stack">
+      <span class="project-modal-cat">Stack technique</span>
+      <h4>Outils utilisés</h4>
       <ul>
-        <li>Installation et configuration de serveurs Linux (Debian, Ubuntu)</li>
+        <li>Debian / Ubuntu</li>
+        <li>Nextcloud</li>
+        <li>DHCP et pare-feu</li>
+      </ul>
+    </template>
+    <template id="ms-etapes">
+      <span class="project-modal-cat">Missions</span>
+      <h4>Missions réalisées</h4>
+      <ul>
+        <li>Installation et configuration de serveurs Linux</li>
         <li>Mise en place et maintenance de services réseau (DHCP)</li>
         <li>Configuration de pare-feu et sécurité réseau</li>
         <li>Support technique aux utilisateurs finaux</li>
-        <li>Déploiement d'une instance Nextcloud avec sécurisation des accès et gestion des utilisateurs</li>
+        <li>Déploiement d'une instance Nextcloud sécurisée</li>
         <li>Configuration de l'imprimante réseau</li>
       </ul>
-    </div>
+    </template>
+    <template id="ms-resultats">
+      <span class="project-modal-cat">Résultats</span>
+      <h4>Compétences acquises</h4>
+      <p>Première expérience professionnelle en administration système, avec une vraie autonomie sur le support utilisateur et la sécurisation d'un service cloud interne.</p>
+    </template>
   </article>
 
+</div>
+
+<!-- Modale de détail (partagée par tous les projets) -->
+<div class="project-modal-overlay" id="project-modal-overlay">
+  <div class="project-modal-box">
+    <button class="project-modal-close" id="project-modal-close" aria-label="Fermer">✕</button>
+    <div id="project-modal-body"></div>
+  </div>
 </div>
 
 <footer>
