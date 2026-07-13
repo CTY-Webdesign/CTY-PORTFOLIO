@@ -82,6 +82,14 @@ if (projectModalOverlay) {
   });
 }
 
+// ---------- Parcours (accordéon) ----------
+document.querySelectorAll('.parcours-row').forEach(row => {
+  row.addEventListener('click', () => {
+    const expanded = row.getAttribute('aria-expanded') === 'true';
+    row.setAttribute('aria-expanded', String(!expanded));
+  });
+});
+
 // ---------- EmailJS ----------
 // ⚠️ Vérifie que ces IDs et les noms de champs (user_name / user_email / message)
 // correspondent à ton service et à ton template EmailJS.
