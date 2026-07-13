@@ -18,7 +18,7 @@
       <a href="index.html#parcours">Parcours</a>
       <a href="index.html#skills">Compétences</a>
       <a href="index.html#documents">Documents</a>
-      <a href="index.html#hero">Contact</a>
+      <a href="index.html#contact">Contact</a>
     </nav>
   </div>
 </header>
@@ -304,10 +304,12 @@
       <div class="project-block-info">
         <span class="cat">Stage — février à mars 2026</span>
         <h3>Administrateur Systèmes & Réseaux — Mathésciences</h3>
-        <p>Poste occupé de février à mars 2026 au sein d'une entreprise de tutoring, avec un périmètre allant de l'administration serveur au support utilisateur.</p>
+        <p>Stage de deux mois au sein d'une entreprise de soutien scolaire, avec pour mission principale la migration complète de son infrastructure historique (TrueNAS Scale) vers Proxmox VE, la sécurisation du réseau, et la mise en place d'un système de sauvegarde et de supervision.</p>
         <ul>
-          <li>Serveurs Linux (Debian, Ubuntu)</li>
-          <li>Déploiement Nextcloud sécurisé</li>
+          <li>Migration d'hyperviseur TrueNAS Scale → Proxmox VE</li>
+          <li>Sécurisation réseau (OPNsense, VPN, reverse proxy)</li>
+          <li>Sauvegarde (Proxmox Backup Server, méthode GFS)</li>
+          <li>Supervision (Prometheus, Grafana, Uptime Kuma)</li>
         </ul>
       </div>
       <div class="project-modals">
@@ -317,8 +319,17 @@
         <button class="modal-card" data-target="ms-stack">
           <span class="modal-icon">🛠️</span><span class="modal-label">Stack technique</span>
         </button>
+        <button class="modal-card" data-target="ms-architecture">
+          <span class="modal-icon">🗺️</span><span class="modal-label">Architecture réseau</span>
+        </button>
         <button class="modal-card" data-target="ms-etapes">
           <span class="modal-icon">✅</span><span class="modal-label">Missions</span>
+        </button>
+        <button class="modal-card" data-target="ms-sauvegarde">
+          <span class="modal-icon">💾</span><span class="modal-label">Sauvegarde</span>
+        </button>
+        <button class="modal-card" data-target="ms-monitoring">
+          <span class="modal-icon">📡</span><span class="modal-label">Monitoring</span>
         </button>
         <button class="modal-card" data-target="ms-resultats">
           <span class="modal-icon">🏆</span><span class="modal-label">Résultats</span>
@@ -328,34 +339,89 @@
 
     <template id="ms-contexte">
       <span class="project-modal-cat">Contexte</span>
-      <h4>Un stage généraliste système & réseau</h4>
-      <p>Stage de deux mois au sein d'une entreprise de tutoring, avec pour mission de maintenir et sécuriser l'infrastructure existante tout en assurant le support des utilisateurs.</p>
+      <h4>De la rencontre au projet de migration</h4>
+      <p>J'ai rencontré cette entreprise lors d'un jobdating organisé par mon école. Notre échange a fait ressortir que les outils informatiques utilisés en interne — l'entreprise s'appuyait alors sur TrueNAS Scale pour faire tourner ses services — n'étaient plus les plus adaptés à son fonctionnement quotidien ni à ses projets futurs.</p>
+      <p>Après avoir présenté Proxmox VE, une solution open source que j'avais déjà pratiquée en cours et à titre personnel, j'ai été recruté pour un stage de deux mois avec quatre objectifs : migrer l'infrastructure vers Proxmox, optimiser le stockage du serveur, mettre en place un système de sauvegarde robuste, et finaliser diverses tâches informatiques.</p>
+      <p>La première phase a consisté en un audit complet : état des lieux des deux hyperviseurs, inventaire du parc informatique, et analyse des besoins avec mon tuteur à partir d'une roadmap de suivi. Cet audit a débouché sur un schéma réseau de l'infrastructure existante puis sur un schéma prévisionnel de la cible à atteindre.</p>
+      <!-- SCHEMA: emplacement pour le schéma réseau initial / prévisionnel, anonymisé -->
     </template>
+
     <template id="ms-stack">
       <span class="project-modal-cat">Stack technique</span>
-      <h4>Outils utilisés</h4>
+      <h4>Outils et technologies utilisés</h4>
       <ul>
-        <li>Debian / Ubuntu</li>
-        <li>Nextcloud</li>
-        <li>DHCP et pare-feu</li>
+        <li>Proxmox VE (hyperviseur cible) et Proxmox Backup Server (sauvegarde)</li>
+        <li>OPNsense (pare-feu / routage inter-VLAN)</li>
+        <li>Wireguard (VPN d'administration, en conteneur LXC dédié)</li>
+        <li>Nginx Proxy Manager (reverse proxy, certificats Let's Encrypt automatiques)</li>
+        <li>Docker Compose (déploiement de n8n, Vaultwarden)</li>
+        <li>Nextcloud AIO (VM Debian dédiée)</li>
+        <li>Traefik (exposition sécurisée de Vaultwarden) et MariaDB/MySQL</li>
+        <li>Prometheus, Node Exporter et Grafana (métriques et visualisation)</li>
+        <li>Uptime Kuma + bot Telegram (alerting de disponibilité)</li>
+        <li>Scripting Bash pour l'automatisation (montage disque, déploiement Node Exporter)</li>
       </ul>
     </template>
+
+    <template id="ms-architecture">
+      <span class="project-modal-cat">Architecture réseau</span>
+      <h4>Isolation et sécurisation du réseau</h4>
+      <ul>
+        <li>Réseau de production isolé du réseau principal via une VM OPNsense</li>
+        <li>Réseau de laboratoire séparé pour tester avant mise en production</li>
+        <li>Port forwarding + réservations DHCP → IP/ports réels masqués, surface d'exposition réduite</li>
+        <li>VPN Wireguard dans un conteneur LXC dédié, séparé d'OPNsense pour ne pas le surcharger</li>
+        <li>Reverse proxy (Nginx Proxy Manager) : un sous-domaine par service, SSL auto via Let's Encrypt</li>
+        <li>Double redirection de port (box → OPNsense → conteneur) pour rendre VPN et reverse proxy accessibles</li>
+      </ul>
+      <!-- SCHEMA: emplacement pour le schéma réseau final (VLAN prod/labo, VPN, reverse proxy), anonymisé -->
+    </template>
+
     <template id="ms-etapes">
       <span class="project-modal-cat">Missions</span>
-      <h4>Missions réalisées</h4>
+      <h4>Déroulé des missions</h4>
       <ul>
-        <li>Installation et configuration de serveurs Linux</li>
-        <li>Mise en place et maintenance de services réseau (DHCP)</li>
-        <li>Configuration de pare-feu et sécurité réseau</li>
-        <li>Support technique aux utilisateurs finaux</li>
-        <li>Déploiement d'une instance Nextcloud sécurisée</li>
-        <li>Configuration de l'imprimante réseau</li>
+        <li><strong>Stockage :</strong> disque 6 To installé à froid, script Bash (GPT + ext4), intégré à Proxmox</li>
+        <li><strong>Réseau/sécurité :</strong> déploiement d'OPNsense, du VPN et du reverse proxy</li>
+        <li><strong>Migration n8n :</strong> export JSON via shell du conteneur → SSH → redéploiement en LXC (Docker Compose)</li>
+        <li><strong>Migration Vaultwarden :</strong> export/import du coffre JSON, nouveau conteneur (Traefik + MariaDB)</li>
+        <li><strong>Migration Nextcloud :</strong> 150+ Go transférés (SFTP), VM dédiée, hardening , politique de mots de passe, customisation</li>
+        <li><strong>Documentation :</strong> guide de prise en main OPNsense pour les futurs administrateurs</li>
       </ul>
     </template>
+
+    <template id="ms-sauvegarde">
+      <span class="project-modal-cat">Sauvegarde & résilience</span>
+      <h4>Trois niveaux de protection</h4>
+      <ul>
+        <li>Ancien serveur reconverti en serveur de sauvegarde dédié (site distant)</li>
+        <li>Proxmox Backup Server (PBS), compatible nativement avec Proxmox VE</li>
+        <li>3 niveaux : sauvegarde locale + sauvegarde distante (PBS) + support externe</li>
+        <li>LVM créé pour exploiter tout le stockage disponible en datastore</li>
+        <li>Tunnel Wireguard dédié entre l'hyperviseur et le PBS (sites distants)</li>
+        <li>Politique GFS : quotidien (7j) → hebdomadaire (4 sem.) → mensuel (12 mois)</li>
+      </ul>
+    </template>
+
+    <template id="ms-monitoring">
+      <span class="project-modal-cat">Monitoring</span>
+      <h4>Superviser l'infrastructure en production</h4>
+      <ul>
+        <li>Un conteneur dédié regroupe tous les outils de supervision</li>
+        <li><strong>Prometheus :</strong> collecte des métriques</li>
+        <li><strong>Node Exporter :</strong> agent sur chaque machine, expose les métriques (CPU/RAM/disque/réseau) que Prometheus vient interroger</li>
+        <li><strong>Grafana :</strong> visualisation via dashboards communautaires</li>
+        <li><strong>Uptime Kuma :</strong> sondes HTTPS/IP pour la disponibilité des services</li>
+        <li>Alertes envoyées en temps réel via un bot Telegram dédié</li>
+      </ul>
+    </template>
+
     <template id="ms-resultats">
       <span class="project-modal-cat">Résultats</span>
-      <h4>Compétences acquises</h4>
-      <p>Première expérience professionnelle en administration système, avec une vraie autonomie sur le support utilisateur et la sécurisation d'un service cloud interne.</p>
+      <h4>Bilan et compétences acquises</h4>
+      <p>L'objectif fixé a été atteint : migration réussie des services critiques (Nextcloud en tête), mise en place de la sécurité réseau, d'un système de sauvegarde à trois niveaux et d'une supervision opérationnelle — les administrateurs sont aujourd'hui alertés dès qu'un service tombe.</p>
+      <p>Ce stage m'a confirmé mon attrait pour l'administration systèmes et réseaux et m'a donné envie d'approfondir une voie DevOps. Au-delà des compétences techniques, j'ai été mis au défi sur la gestion de projet et la communication à distance avec mon tuteur, situé à l'étranger pendant une partie du stage.</p>
+      <p>Axes d'amélioration identifiés : gestion de projet et documentation technique, sur lesquels je continue de progresser depuis.</p>
     </template>
   </article>
 
@@ -379,7 +445,7 @@
     </div>
     <ul class="footer-links">
       <li><a href="https://www.linkedin.com/in/thomas-coutaye-84a8301b1/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-      <li><a href="index.html#hero">Contact</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
     </ul>
   </div>
 </footer>
