@@ -89,28 +89,3 @@ document.querySelectorAll('.parcours-row').forEach(row => {
     row.setAttribute('aria-expanded', String(!expanded));
   });
 });
-
-// ---------- EmailJS ----------
-// ⚠️ Vérifie que ces IDs et les noms de champs (user_name / user_email / message)
-// correspondent à ton service et à ton template EmailJS.
-const contactForm = document.getElementById('contact-form');
-if (contactForm) {
-  if (window.emailjs) emailjs.init("F38ACmNnMwm_sZeRG");
-  const formStatus = document.getElementById('form-status');
-  contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    formStatus.textContent = 'Envoi en cours...';
-    formStatus.style.color = 'var(--brown)';
-    emailjs.sendForm('service_3kj3yex', 'template_9jo2gcs', contactForm).then(
-      () => {
-        formStatus.textContent = '✓ Message envoyé avec succès.';
-        formStatus.style.color = 'var(--green)';
-        contactForm.reset();
-      },
-      (error) => {
-        formStatus.textContent = '✗ Erreur : ' + (error.text || 'envoi impossible.');
-        formStatus.style.color = '#c0392b';
-      }
-    );
-  });
-}
